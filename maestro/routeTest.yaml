@@ -1,0 +1,80 @@
+appId: "com.s370101387.synctrip"
+---
+# launch App
+- launchApp
+# login
+#- doubleTapOn: "OK"
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- tapOn: { id: "password" }
+- inputText: "zhuhanyu666"
+- doubleTapOn: { id: "login" }
+# navigate to dashboard and check the function of the buttons
+- assertVisible: { id: "dashboardScreen"}
+- waitForAnimationToEnd
+- tapOn: { id: "tab-map" }
+- waitForAnimationToEnd
+- tapOn: { id: "searchPlaces" }
+- waitForAnimationToEnd
+- inputText: "The White House"
+- doubleTapOn: "The White House, Washington, DC, USA"
+- tapOn: { id: "markPlace" }
+- waitForAnimationToEnd
+- tapOn: {id: "showInfo"}
+- tapOn: { id: "markPlace" }
+- tapOn: "Name"
+- waitForAnimationToEnd
+- inputText: "The White House"
+- tapOn: "Description"
+- waitForAnimationToEnd
+- inputText: "Tour"
+- tapOn: { id: "selectDate" }
+- tapOn: "17"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "selectTime" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: "Ok"
+- waitForAnimationToEnd
+- tapOn: {id: "confirmDestination"}
+- tapOn: { id: "map"}
+- tapOn: {id: "showInfo"}
+- tapOn: {id: "openRoutePlanning"}
+- tapOn: {id: "routeOriginPicker"}
+- tapOn: "Baltimore, MD 21218, USA"
+- tapOn: {id: "routeDestinationPicker"}
+- tapOn: "Washington, DC, USA"
+- tapOn: {id: "mode-WALK"}
+- tapOn: {id: "mode-BICYCLE"}
+- tapOn: {id: "mode-TRANSIT"}
+- tapOn: {id: "mode-DRIVE"}
+- tapOn: {id: "selectDepartureTime"}
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- tapOn: "Ok"
+- tapOn: {id: "confirmRoute"}
+- tapOn: {id: "closeRouteInfo"}
+- tapOn: {id: "tab-trip"}
+- tapOn: "16"
+- tapOn: {id: "trash" }
+- extendedWaitUntil:
+      visible: "DELETE"
+      timeout: 10000
+- tapOn: "DELETE"
+- tapOn: "17"
+- tapOn: {id: "trash" }
+- extendedWaitUntil:
+      visible: "DELETE"
+      timeout: 10000
+- tapOn: "DELETE"
+- tapOn: {id: "deleteTrip"}
+- tapOn: "DELETE"
+# logout
+- tapOn: { id: "tab-profile" }
+- tapOn: "Log Out"
+- assertVisible: {id: "logInBackground"}

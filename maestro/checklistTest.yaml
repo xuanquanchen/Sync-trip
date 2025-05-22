@@ -1,0 +1,28 @@
+appId: "com.s370101387.synctrip"
+---
+# launch App
+- launchApp
+# login
+#- doubleTapOn: "OK"
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- tapOn: { id: "password" }
+- inputText: "zhuhanyu666"
+- doubleTapOn: { id: "login" }
+# navigate to dashboard and check the function of the buttons
+- assertVisible: { id: "dashboardScreen"}
+- tapOn: {id: "tab-trip"}
+- tapOn: "16"
+- extendedWaitUntil:
+    visible:
+      id: "addChecklist"
+    timeout: 10000
+- tapOn: {id: "addChecklist"}
+# - tapOn: "Edit"
+- tapOn: {id: "editChecklistItem"}
+- tapOn: {id: "checklistInput"}
+# - eraseText
+- inputText: "Student Card"
+- doubleTapOn: {id: "confirmChecklistItem"}
+- tapOn: {id: "checkbox"}
+- tapOn: {id: "deleteChecklistItem"}

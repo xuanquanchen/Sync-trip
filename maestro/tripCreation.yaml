@@ -1,0 +1,112 @@
+appId: "com.s370101387.synctrip"
+---
+# launch App
+- launchApp
+# login
+#- doubleTapOn: "OK"
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- tapOn: { id: "password" }
+- inputText: "zhuhanyu666"
+- doubleTapOn: { id: "login" }
+# navigate to dashboard and check the function of the buttons
+- assertVisible: { id: "dashboardScreen"}
+- waitForAnimationToEnd
+- tapOn: { id: "tab-plus" }
+- waitForAnimationToEnd
+- tapOn: { id: "tripTitle" }
+- inputText: "Test Trip"
+- tapOn: { id: "selectDates" }
+- waitForAnimationToEnd
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "14"
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "17"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "createTrip" }
+- assertVisible: "Test Trip"
+# Test for Map Screen
+- tapOn: { id: "tab-map" }
+- waitForAnimationToEnd
+- tapOn: { id: "searchPlaces" }
+- waitForAnimationToEnd
+- inputText: "Johns Hopkins University"
+- doubleTapOn: "Johns Hopkins University, Baltimore, MD, USA"
+- tapOn: { id: "markPlace" }
+- waitForAnimationToEnd
+- tapOn: {id: "showInfo"}
+- tapOn: { id: "markPlace" }
+- tapOn: "Name"
+- waitForAnimationToEnd
+- inputText: "Johns Hopkins University"
+- tapOn: "Description"
+- waitForAnimationToEnd
+- inputText: "School Tour"
+- tapOn: { id: "selectDate" }
+- tapOn: "15"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "selectTime" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: "Ok"
+- waitForAnimationToEnd
+- tapOn: {id: "confirmDestination"}
+- tapOn: { id: "map"}
+- waitForAnimationToEnd
+- tapOn: { id: "editMarker" }
+- waitForAnimationToEnd
+- tapOn: { id: "editDate" }
+- tapOn: "16"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "editTime" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker2", point: "70%,50%" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker2", point: "70%,50%" }
+- waitForAnimationToEnd
+- tapOn: "Ok"
+- tapOn: { id: "saveChanges" }
+- waitForAnimationToEnd
+#
+# Test For Current Trip Screen
+- tapOn: { id: "tab-dashboard" }
+- waitForAnimationToEnd
+- tapOn: "Edit"
+- tapOn: { id: "editTrip" }
+- tapOn: { id: "changeDates" }
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "13"
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "18"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: "ongoing"
+- tapOn: {id: "saveTripChanges"}
+- waitForAnimationToEnd
+- tapOn: "16"
+- tapOn: {id: "pencil" }
+- tapOn: "Cancel"
+- tapOn: {id: "tab-trip"}
+- tapOn: {id: "archiveTrip"}
+- tapOn: "ARCHIVE"
+- tapOn: "Archived"
+- tapOn: "Restore"
+- tapOn: "OK"

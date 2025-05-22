@@ -1,0 +1,12 @@
+appId: "com.s370101387.synctrip"
+---
+- launchApp
+#- doubleTapOn: "OK"
+- waitForAnimationToEnd
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- doubleTapOn:
+    text: "Forgot password?"
+- assertVisible: "A password reset email has been sent"
+- tapOn: "OK"
+#- assertVisible: { id: "signUpScreen" }

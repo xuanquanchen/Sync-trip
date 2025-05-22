@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "sync-trip",
+    "slug": "sync-trip",
+    "version": "1.0.0",
+    "newArchEnabled": false,
+    "icon": "./assets/icon.png",
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-firebase/crashlytics",
+      [
+        "expo-dev-launcher",
+        {
+          "launchMode": "most-recent"
+        }
+      ]
+    ],
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.s370101387.synctrip"
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "useNextNotificationsApi": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }
+      },
+      "package": "com.s370101387.synctrip"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fc9dba69-ea25-43d7-85b1-ab5321ac4588"
+      },
+      "googleMaps": {
+        "apiKey": "",
+        "apiKey2": ""
+      }
+    },
+    "owner": "s370101387"
+  }
+}

@@ -1,0 +1,41 @@
+appId: "com.s370101387.synctrip"
+---
+# launch App
+- launchApp
+# login
+#- doubleTapOn: "OK"
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- tapOn: { id: "password" }
+- inputText: "zhuhanyu666"
+- doubleTapOn: { id: "login" }
+# navigate to dashboard and check the function of the buttons
+- assertVisible: { id: "dashboardScreen"}
+- waitForAnimationToEnd
+- tapOn: { id: "tab-dashboard" }
+- tapOn: "Active"
+- assertVisible:
+    below: "Planning"
+    containsDescendants:
+      - "Test Trip"
+- tapOn:
+    below: "Planning"
+    containsDescendants:
+      - "Invite"
+- waitForAnimationToEnd
+- tapOn: {id: "inviteEmailInput"}
+- inputText: "leadlegendx@gmail.com"
+- tapOn: { id: "confirmInvitation" }
+- tapOn: "OK"
+- tapOn: {id: "gotoAnnouceScreen"}
+- tapOn: {id: "addAnnouncement"}
+- tapOn: {id: "announcementInput"}
+- inputText: "Test Announcement"
+- tapOn: {id: "confirmAnnoucement"}
+- tapOn: {id: "editAnnouncement"}
+- tapOn: {id: "announcementInput"}
+- eraseText
+- inputText: "New Test Announcement"
+- tapOn: {id: "confirmAnnoucement"}
+- tapOn: {id: "deleteAnnouncement"}
+- back

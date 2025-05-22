@@ -1,0 +1,10 @@
+appId: "com.s370101387.synctrip"
+---
+- launchApp
+#- doubleTapOn: "OK"
+- waitForAnimationToEnd
+- tapOn: {id: "signUp"}
+- assertVisible: { id: "signUpScreen" }
+- tapOn: { id: "email" }
+- tapOn: { id: "pwd" }
+- tapOn: { id: "confirmPwd" }

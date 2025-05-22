@@ -1,0 +1,292 @@
+appId: "com.s370101387.synctrip"
+---
+# launch App
+- launchApp
+# login
+#- doubleTapOn: "OK"
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- tapOn: { id: "password" }
+- inputText: "zhuhanyu666"
+- doubleTapOn: { id: "login" }
+# navigate to dashboard and check the function of the buttons
+- assertVisible: { id: "dashboardScreen"}
+- waitForAnimationToEnd
+# Test for Profile Screen
+- tapOn: { id: "tab-profile" }
+- assertVisible: { id: "profileScreen" }
+- tapOn: { id: "profile_edit" }
+# edit name
+- tapOn: { id: "name" }
+- eraseText
+- inputText: "Test_Acc"
+# edit bio
+- tapOn: { id: "bio" }
+- eraseText
+- inputText: "Hello World!"
+# edit travel preferences
+- doubleTapOn: { id: "travelPreferences"}
+- tapOn: "N/A"
+- tapOn: { id: "save_profile" }
+# Test for New Trip Screen
+- tapOn: { id: "tab-plus" }
+- waitForAnimationToEnd
+- tapOn: { id: "tripTitle" }
+- inputText: "Test Trip"
+- tapOn: { id: "selectDates" }
+- waitForAnimationToEnd
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "14"
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "17"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "createTrip" }
+- assertVisible: "Test Trip"
+#
+# Test for Map Screen
+- tapOn: { id: "tab-map" }
+- waitForAnimationToEnd
+- tapOn: { id: "searchPlaces" }
+- waitForAnimationToEnd
+- inputText: "Johns Hopkins University"
+- doubleTapOn: "Johns Hopkins University, Baltimore, MD, USA"
+- tapOn: { id: "markPlace" }
+- waitForAnimationToEnd
+- tapOn: {id: "showInfo"}
+- tapOn: { id: "markPlace" }
+- tapOn: "Name"
+- waitForAnimationToEnd
+- inputText: "Johns Hopkins University"
+- tapOn: "Description"
+- waitForAnimationToEnd
+- inputText: "School Tour"
+- tapOn: { id: "selectDate" }
+- tapOn: "15"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "selectTime" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: "Ok"
+- waitForAnimationToEnd
+- tapOn: {id: "confirmDestination"}
+- tapOn: { id: "map"}
+- waitForAnimationToEnd
+- tapOn: { id: "editMarker" }
+- waitForAnimationToEnd
+- tapOn: { id: "editDate" }
+- tapOn: "16"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "editTime" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker2", point: "70%,50%" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker2", point: "70%,50%" }
+- waitForAnimationToEnd
+- tapOn: "Ok"
+- tapOn: { id: "saveChanges" }
+- waitForAnimationToEnd
+#
+# Test For Current Trip Screen
+- tapOn: { id: "tab-dashboard" }
+- waitForAnimationToEnd
+- tapOn: "Edit"
+- tapOn: { id: "editTrip" }
+- tapOn: { id: "changeDates" }
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "13"
+- tapOn:
+    below: "May 2025"
+    containsDescendants:
+      - text: "18"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: "ongoing"
+- tapOn: {id: "saveTripChanges"}
+- waitForAnimationToEnd
+- tapOn: {id: "tab-trip"}
+- tapOn: {id: "archiveTrip"}
+- tapOn: "ARCHIVE"
+- tapOn: "Archived"
+- tapOn: "Restore"
+- tapOn: "OK"
+- tapOn: {id: "tab-trip"}
+- tapOn: "16"
+- tapOn: {id: "pencil" }
+- tapOn: "Cancel"
+- extendedWaitUntil:
+    visible:
+      id: "addChecklist"
+    timeout: 10000
+- tapOn: {id: "addChecklist"}
+# - tapOn: "Edit"
+- tapOn: {id: "editChecklistItem"}
+- tapOn: {id: "checklistInput"}
+# - eraseText
+- inputText: "Student Card"
+- doubleTapOn: {id: "confirmChecklistItem"}
+- tapOn: {id: "checkbox"}
+- tapOn: {id: "deleteChecklistItem"}
+- waitForAnimationToEnd
+# Test For Dashboard Screen
+- tapOn: { id: "tab-dashboard" }
+- tapOn: "Active"
+- assertVisible:
+    below: "Planning"
+    containsDescendants:
+      - "Test Trip"
+- tapOn:
+    below: "Planning"
+    containsDescendants:
+      - "Invite"
+- waitForAnimationToEnd
+- tapOn: {id: "inviteEmailInput"}
+- inputText: "leadlegendx@gmail.com"
+- tapOn: { id: "confirmInvitation" }
+- tapOn: "OK"
+- tapOn: {id: "gotoAnnouceScreen"}
+- tapOn: {id: "addAnnouncement"}
+- tapOn: {id: "announcementInput"}
+- inputText: "Test Announcement"
+- tapOn: {id: "confirmAnnoucement"}
+- tapOn: {id: "editAnnouncement"}
+- tapOn: {id: "announcementInput"}
+- eraseText
+- inputText: "New Test Announcement"
+- tapOn: {id: "confirmAnnoucement"}
+- tapOn: {id: "deleteAnnouncement"}
+- back
+#- tapOn: {id: "tab-trip"}
+#- tapOn: {id: "archiveTrip"}
+#- tapOn: "ARCHIVE"
+#- tapOn: "Archived"
+#- tapOn: "Restore"
+#- tapOn: "OK"
+- tapOn: { id: "tab-bill"}
+- tapOn: { id: "createBill"}
+- waitForAnimationToEnd
+- tapOn: "New Bill"
+- tapOn: {id: "billTitle"}
+- eraseText
+- inputText: "Test Bill"
+- tapOn: "Select…"
+- tapOn: "food"
+- tapOn: {id: "currencyButton"}
+- tapOn:
+    above: "EUR"
+    containsDescendants:
+      - "USD"
+- tapOn: {id: "participantAdd"}
+- tapOn: "Confirm"
+#- tapOn: {id: "participantAdd"}
+- tapOn: {id: "customSplit"}
+- tapOn: {id: "evenSplit"}
+- tapOn: { id: "enterTotalBill" }
+- inputText: "10"
+- tapOn: { id: "billDescription" }
+- inputText: "Dinner"
+- scrollUntilVisible:
+    element:
+      id: "saveBill"
+- tapOn: {id: "saveBill"}
+- tapOn: "Test Bill"
+# - tapOn: "Pay with PayPal"
+- scrollUntilVisible:
+    element:
+      id: "archiveBill"
+- tapOn: {id: "archiveBill"}
+- tapOn: "ARCHIVE"
+#- back
+- tapOn: "Test Bill"
+- tapOn: {id: "unarchiveBill"}
+- tapOn: "Active"
+- tapOn: "Test Bill"
+- doubleTapOn: "Delete Bill"
+- tapOn: "DELETE"
+- tapOn: {id: "tab-trip"}
+- tapOn: {id: "helpButton"}
+- tapOn: "OK"
+- tapOn:
+    id: "exportICS"
+- back
+- tapOn: { id: "tab-map" }
+- waitForAnimationToEnd
+- tapOn: { id: "searchPlaces" }
+- waitForAnimationToEnd
+- inputText: "The White House"
+- doubleTapOn: "The White House, Washington, DC, USA"
+- tapOn: { id: "markPlace" }
+- waitForAnimationToEnd
+- tapOn: {id: "showInfo"}
+- tapOn: { id: "markPlace" }
+- tapOn: "Name"
+- waitForAnimationToEnd
+- inputText: "The White House"
+- tapOn: "Description"
+- waitForAnimationToEnd
+- inputText: "Tour"
+- tapOn: { id: "selectDate" }
+- tapOn: "17"
+- waitForAnimationToEnd
+- tapOn: "Save"
+- waitForAnimationToEnd
+- tapOn: { id: "selectTime" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- waitForAnimationToEnd
+- tapOn: "Ok"
+- waitForAnimationToEnd
+- tapOn: {id: "confirmDestination"}
+- tapOn: { id: "map"}
+- tapOn: {id: "showInfo"}
+- tapOn: {id: "openRoutePlanning"}
+- tapOn: {id: "routeOriginPicker"}
+- tapOn: "Baltimore, MD 21218, USA"
+- tapOn: {id: "routeDestinationPicker"}
+- tapOn: "Washington, DC, USA"
+- tapOn: {id: "mode-WALK"}
+- tapOn: {id: "mode-BICYCLE"}
+- tapOn: {id: "mode-TRANSIT"}
+- tapOn: {id: "mode-DRIVE"}
+- tapOn: {id: "selectDepartureTime"}
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- tapOn: { id: "timePicker1", point: "50%,50%" }
+- tapOn: "Ok"
+- tapOn: {id: "confirmRoute"}
+- tapOn: {id: "closeRouteInfo"}
+- tapOn: {id: "tab-trip"}
+- tapOn: "16"
+- tapOn: {id: "trash" }
+- extendedWaitUntil:
+    visible: "DELETE"
+    timeout: 10000
+- tapOn: "DELETE"
+- tapOn: "17"
+- tapOn: {id: "trash" }
+- extendedWaitUntil:
+    visible: "DELETE"
+    timeout: 10000
+- tapOn: "DELETE"
+- tapOn: {id: "deleteTrip"}
+- tapOn: "DELETE"
+# logout
+- tapOn: { id: "tab-profile" }
+- tapOn: "Log Out"
+- assertVisible: {id: "logInBackground"}

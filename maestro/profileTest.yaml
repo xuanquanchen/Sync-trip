@@ -1,0 +1,30 @@
+appId: "com.s370101387.synctrip"
+---
+# launch App
+- launchApp
+# login
+#- doubleTapOn: "OK"
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- tapOn: { id: "password" }
+- inputText: "zhuhanyu666"
+- doubleTapOn: { id: "login" }
+# navigate to dashboard and check the function of the buttons
+- assertVisible: { id: "dashboardScreen"}
+- waitForAnimationToEnd
+# Test for Profile Screen
+- tapOn: { id: "tab-profile" }
+- assertVisible: { id: "profileScreen" }
+- tapOn: { id: "profile_edit" }
+# edit name
+- tapOn: { id: "name" }
+- eraseText
+- inputText: "Test_Acc"
+# edit bio
+- tapOn: { id: "bio" }
+- eraseText
+- inputText: "Hello World!"
+# edit travel preferences
+- doubleTapOn: { id: "travelPreferences"}
+- tapOn: "N/A"
+- tapOn: { id: "save_profile" }

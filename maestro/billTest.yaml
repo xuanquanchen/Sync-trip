@@ -1,0 +1,61 @@
+appId: "com.s370101387.synctrip"
+---
+# launch App
+- launchApp
+# login
+#- doubleTapOn: "OK"
+- tapOn: { id: "account" }
+- inputText: "vivanoon6666@gmail.com"
+- tapOn: { id: "password" }
+- inputText: "zhuhanyu666"
+- doubleTapOn: { id: "login" }
+# navigate to dashboard and check the function of the buttons
+- assertVisible: { id: "dashboardScreen"}
+- waitForAnimationToEnd
+- tapOn: { id: "tab-bill"}
+- tapOn: { id: "createBill"}
+- waitForAnimationToEnd
+- tapOn: "New Bill"
+- tapOn: {id: "billTitle"}
+- eraseText
+- inputText: "Test Bill"
+- tapOn: "Select…"
+- tapOn: "food"
+- tapOn: {id: "currencyButton"}
+- tapOn:
+    above: "EUR"
+    containsDescendants:
+      - "USD"
+- tapOn: {id: "participantAdd"}
+- tapOn: "Confirm"
+#- tapOn: {id: "participantAdd"}
+- tapOn: {id: "customSplit"}
+- tapOn: {id: "evenSplit"}
+- tapOn: { id: "enterTotalBill" }
+- inputText: "10"
+- tapOn: { id: "billDescription" }
+- inputText: "Dinner"
+- scrollUntilVisible:
+    element:
+      id: "saveBill"
+- tapOn: {id: "saveBill"}
+- tapOn: "Test Bill"
+# - tapOn: "Pay with PayPal"
+- scrollUntilVisible:
+    element:
+      id: "archiveBill"
+- tapOn: {id: "archiveBill"}
+- tapOn: "ARCHIVE"
+#- back
+- tapOn: "Test Bill"
+- tapOn: {id: "unarchiveBill"}
+- tapOn: "Active"
+- tapOn: "Test Bill"
+- doubleTapOn: "Delete Bill"
+- tapOn: "DELETE"
+- tapOn: {id: "tab-trip"}
+- tapOn: {id: "helpButton"}
+- tapOn: "OK"
+- tapOn:
+    id: "exportICS"
+- back
